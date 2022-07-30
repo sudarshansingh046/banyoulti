@@ -1,5 +1,4 @@
 import 'package:banyoulti/utils/colors.dart';
-import 'package:banyoulti/widgets/customText.dart';
 import 'package:banyoulti/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
