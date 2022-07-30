@@ -1,5 +1,5 @@
 import 'package:banyoulti/utils/colors.dart';
-import 'package:banyoulti/view/auth/login_voiture_screen.dart';
+import 'package:banyoulti/auth/login_voiture_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -48,14 +48,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
-              // (scrollController.positions.length == 0 ||
-              //         scrollController.position.pixels == 0.0)
-              //     ? Container()
-              //     :
               Scrollbar(
-                isAlwaysShown: true,
-                showTrackOnHover: true,
                 controller: scrollController,
                 thickness: 10,
                 radius: const Radius.circular(3),

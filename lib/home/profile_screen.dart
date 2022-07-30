@@ -40,6 +40,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           SizedBox(height: 20),
           customTile('images/profile/Modify.png', "Modifie votre profile"),
+          customTile('images/profile/add.png', "Ajoute un profile de voiture"),
           customTile('images/profile/Setting 2.png', "Parametre"),
           customTile('images/profile/Help.png', "Aide"),
           customTile('images/profile/Log out.png', "Log out"),

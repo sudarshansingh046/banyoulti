@@ -1,5 +1,5 @@
 import 'package:banyoulti/utils/colors.dart';
-import 'package:banyoulti/view/auth/login_screen.dart';
+import 'package:banyoulti/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboard/flutter_onboard.dart';
 import 'package:flutter_onboard/src/contants/constants.dart';
@@ -192,7 +192,7 @@ class _OnBoard extends HookConsumerWidget {
                       child: Column(
                         children: <Widget>[
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.2,
+                            height: MediaQuery.of(context).size.height * .15,
                             // width: 150,
                             child: Image.asset(
                               'images/Logo4.png',
@@ -202,16 +202,14 @@ class _OnBoard extends HookConsumerWidget {
                             ),
                           ),
                           Container(
+                            height: MediaQuery.of(context).size.height / 3,
                             margin: const EdgeInsets.only(
                               left: 12,
                               right: 12,
                               top: 80,
                             ),
                             child: Image.asset(
-                              'images/welcomelogo.jpg',
-                              width: imageWidth,
-                              height: imageHeight,
-                              fit: BoxFit.contain,
+                              'images/welcomelogo.png',
                             ),
                           ),
                           const SizedBox(height: 80),
@@ -223,8 +221,12 @@ class _OnBoard extends HookConsumerWidget {
                                       margin: const EdgeInsets.symmetric(
                                           horizontal: 12, vertical: 18),
                                       child: MaterialButton(
-                                        minWidth: Get.width * 0.85,
-                                        height: 50,
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                16,
+                                        minWidth:
+                                            MediaQuery.of(context).size.width *
+                                                .8,
                                         color: kwhite,
                                         shape: RoundedRectangleBorder(
                                             borderRadius:

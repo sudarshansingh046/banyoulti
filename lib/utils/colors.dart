@@ -6,3 +6,4 @@ const Color korange = Color(0xfff9d25d);
 const Color kblack = Colors.black;
 const Color kwhite = Colors.white;
 const Color kprimary = Color(0xff222c36);
+const Color primarycolor = Color(0xff0f3355);

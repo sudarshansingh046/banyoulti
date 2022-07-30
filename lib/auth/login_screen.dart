@@ -1,8 +1,4 @@
 import 'package:banyoulti/utils/colors.dart';
-import 'package:banyoulti/view/home/home.dart';
-import 'package:banyoulti/view/onboarding/onBoarding.dart';
-
-import 'package:banyoulti/widgets/customText.dart';
 import 'package:banyoulti/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,7 +7,7 @@ import 'privacy_screen.dart';
 import 'signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -88,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 onPressed: () {
-                  Get.to(() => PrivacyScreen());
+                  Get.to(() => const PrivacyScreen());
                 },
                 child: const Text(
                   'LOG IN',

@@ -2,7 +2,7 @@ import 'package:banyoulti/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboard/flutter_onboard.dart';
 import 'package:get/get.dart';
-import 'onboarding_package.dart' as o;
+import 'package:banyoulti/onboarding/onboarding_package.dart ' as o;
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -13,17 +13,6 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
-  void _onNextTap(OnBoardState onBoardState) {
-    if (!onBoardState.isLastPage) {
-      _pageController.animateToPage(
-        onBoardState.page + 1,
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.easeInOutSine,
-      );
-    } else {
-      //print("nextButton pressed");
-    }
-  }
 
   final List<String> onBoardData = [
     'Science has proven that powerful\n '
@@ -35,22 +24,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       // backgroundColor: kwhite,
-      backgroundColor: Color(0xff0f3355),
-      body: Container(
+      backgroundColor: primarycolor,
+      body: SizedBox(
         width: double.infinity,
         height: Get.height,
         child: o.OnBoard(
           onBoardData: onBoardData,
           pageController: _pageController,
-          titleStyles: TextStyle(
+          titleStyles: const TextStyle(
             color: kblack,
             fontSize: 28.0,
             fontWeight: FontWeight.w600,
           ),
-          descriptionStyles: TextStyle(
+          descriptionStyles: const TextStyle(
             color: kwhite,
             fontSize: 17.0,
           ),
@@ -63,6 +51,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ),
       ),
-    ));
+    );
   }
 }
