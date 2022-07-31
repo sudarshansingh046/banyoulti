@@ -26,11 +26,11 @@ class _LoginScreenState extends State<LoginScreen> {
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
           child: Column(
             children: [
-              const SizedBox(height: 50),
+              SizedBox(height: MediaQuery.of(context).size.height / 10),
               Center(
                 child: Container(
-                  height: 150,
-                  width: Get.width * 0.5,
+                  height: MediaQuery.of(context).size.height / 5,
+                  width: MediaQuery.of(context).size.width / 1.5,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("images/Logo2.png"),
@@ -46,10 +46,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: kblack,
                 ),
               ),
-              const SizedBox(height: 25),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 18,
+              ),
               customTextField(
                   'images/auth/Email.png', 'Email', emailController),
-              const SizedBox(height: 15),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 22,
+              ),
               customTextField(
                 'images/auth/Password.png',
                 'Mots de passe',
@@ -62,7 +66,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   });
                 },
               ),
-              const SizedBox(height: 10),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 25,
+              ),
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
