@@ -18,12 +18,14 @@ class _HomeScreenState extends State<HomeScreen> {
         '053159', 'changement de huile'),
     EntretiensModel('images/home/Engine.png', 'Moteur', DateTime.now(),
         '055660', 'changement de huile'),
+    EntretiensModel('images/home/Oil.png', 'Vidange et Filtres', DateTime.now(),
+        '053159', 'changement de huile'),
   ];
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        width: Get.width * 0.83,
+        width: Get.width * .9,
         margin: const EdgeInsets.only(top: 5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: 8),
                   Container(
                     height: 45,
-                    width: Get.width * 0.85,
+                    width: Get.width * 0.75,
                     padding: const EdgeInsets.only(left: 20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(35),
@@ -155,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const SizedBox(height: 20),
                   MaterialButton(
-                    minWidth: Get.width * 0.85,
+                    minWidth: Get.width * 0.7,
                     height: 50,
                     color: kprimary,
                     shape: RoundedRectangleBorder(
@@ -189,7 +191,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: entretiensList.length,
                   itemBuilder: (ctx, i) {
                     return Container(
-                      padding: const EdgeInsets.all(16),
                       margin:
                           const EdgeInsets.only(bottom: 5, left: 4, right: 4),
                       height: 130,

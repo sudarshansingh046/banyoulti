@@ -52,13 +52,13 @@ class _HomeState extends State<Home> {
               decoration: const BoxDecoration(
                 color: kprimary,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40),
-                  bottomRight: Radius.circular(40),
+                  bottomLeft: Radius.circular(28),
+                  bottomRight: Radius.circular(28),
                 ),
               ),
               child: Column(
                 children: [
-                  SizedBox(height: 25),
+                  SizedBox(height: MediaQuery.of(context).size.height / 30),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 10),
@@ -69,8 +69,7 @@ class _HomeState extends State<Home> {
                           'Banyoulti',
                           style: TextStyle(
                             color: kwhite,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 30,
+                            fontSize: 50,
                           ),
                         ),
                         SizedBox(
@@ -80,64 +79,55 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 30),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       width: Get.width,
                       height: 25,
                       child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(1.0),
-                          child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: navigationBarIconsList.length,
-                              physics: const NeverScrollableScrollPhysics(),
-                              shrinkWrap: true,
-                              itemBuilder: (ctx, i) {
-                                return Container(
-                                  margin:
-                                      const EdgeInsets.symmetric(horizontal: 5),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            selectedIndex = i;
-                                          });
-                                        },
-                                        child: SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              15,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height /
-                                              15,
-                                          child: Image.asset(
-                                            navigationBarIconsList[i],
-                                            color: selectedIndex == i
-                                                ? korange
-                                                : kwhite,
-                                          ),
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: navigationBarIconsList.length,
+                            physics: const NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemBuilder: (ctx, i) {
+                              return Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                child: Row(
+                                  children: [
+                                    InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                          selectedIndex = i;
+                                        });
+                                      },
+                                      child: SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                15,
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                10,
+                                        child: Image.asset(
+                                          navigationBarIconsList[i],
+                                          color: selectedIndex == i
+                                              ? korange
+                                              : kwhite,
                                         ),
                                       ),
-                                      SizedBox(width: Get.width * 0.045),
-                                      if (i !=
-                                          navigationBarIconsList.length - 1)
-                                        Container(
-                                          height: 30,
-                                          width: 2,
-                                          color: kgrey.withOpacity(0.5),
-                                        ),
-                                    ],
-                                  ),
-                                );
-                              }),
-                        ),
+                                    ),
+                                    SizedBox(width: Get.width * 0.045),
+                                    if (i != navigationBarIconsList.length - 1)
+                                      Container(
+                                        height: 30,
+                                        width: 2,
+                                        color: kgrey.withOpacity(0.5),
+                                      ),
+                                  ],
+                                ),
+                              );
+                            }),
                       ),
                     ),
                   )
