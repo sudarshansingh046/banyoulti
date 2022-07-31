@@ -17,7 +17,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
           child: Column(
@@ -36,41 +37,52 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
               ),
               const Align(
                 alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text(
-                    "Politique de confidentialite et\nconditions d'utilisation",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: kprimary,
+                child: Text(
+                  "Politique de confidentialite et\nconditions d'utilisation",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: kprimary,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 27,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 2.1,
+                decoration: BoxDecoration(
+                  border: Border.all(color: kgrey),
+                ),
+                child: Scrollbar(
+                  thickness: 10,
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            '1. ACCEPTANCE THE USE OF LOREM IPSUM TERMS AND CONDITIONS ',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                              'Your access to and use of Lorem Ipsum (the app) is subject exclusively to these Terms and Conditions. You will not use the app for any purpose that is unlawful or prohibited by these Terms and Conditions. By using the app you are fully accepting the terms, conditions and disclaimers contained in this notice. If you do not accept these Terms and Conditions you must immediately stop using the app.'),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('2. CREDIT CARD DETAILS ',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          Text(
+                              'All Lorem Ipsum purchases are managed by the individual App Stores (Apple, Google Windows) and Lorem Ipsum will never store your credit card information or make it available to any third parties. Any purchasing information provided will be provided directly from you to the respective App Store and you will be subject to their credit card policies.')
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-              Scrollbar(
-                controller: scrollController,
-                thickness: 10,
-                radius: const Radius.circular(3),
-                interactive: true,
-                child: Container(
-                  height: 250,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: kgrey),
-                  ),
-                  padding: const EdgeInsets.all(5),
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: 1,
-                      itemBuilder: (context, index) {
-                        return const Text(
-                            '1. YOUR AGREEMENT By using this Site, you agree to be bound by, and to comply with, these Terms and Conditions. If you do not agree to these Terms and Conditions, please do not use this site. PLEASE NOTE: We reserve the right, at our sole discretion, to change, modify or otherwise alter these Terms and Conditions at any time. Unless otherwise indicated, amendments will become effective immediately. Please review these Terms and Conditions periodically. Your continued use of the Site following the posting of changes and/or modifications will constitute your acceptance of the revised Terms and Conditions and the reasonableness of these standards for notice of changes. For your information, this page was last updated as of the date at the top of these terms and conditions.2. PRIVACY Please review our Privacy Policy, which also governs your visit to this Site, to understand our practices.3. LINKED SITES This Site may contain links to other independent third-party Web sites ');
-                      }),
-                ),
-              ),
               Row(
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                // mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Checkbox(
                       value: isChecked,
