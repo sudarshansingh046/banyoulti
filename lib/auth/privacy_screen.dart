@@ -50,7 +50,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                 height: MediaQuery.of(context).size.height / 27,
               ),
               Container(
-                height: MediaQuery.of(context).size.height / 2.1,
+                height: MediaQuery.of(context).size.height / 2.2,
                 decoration: BoxDecoration(
                   border: Border.all(color: kgrey),
                 ),
